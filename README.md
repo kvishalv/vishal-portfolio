@@ -1,13 +1,17 @@
-# vishalkannankara.com
+# kvishalv.com
 
 Personal site for Vishal Kannankara. Plain HTML, CSS, and a little vanilla JavaScript. No build step, no framework, no dependencies — designed to host as static files on Cloudflare Pages.
 
 ```
 index.html      → all content, one page
+404.html        → page for unknown paths (Cloudflare Pages returns it with status 404)
 styles.css      → design system (light + dark, responsive)
 script.js       → terminal, mobile nav, active-section nav, scroll reveals
 favicon.svg     → monogram favicon
-assets/         → drop headshot.jpg, resume.pdf, og-image.png here (see assets/README.md)
+robots.txt      → crawl rules, AI crawler rules and Content-Signal preferences
+sitemap.xml     → canonical URL list (update <lastmod> when content changes)
+_headers        → Cloudflare Pages response headers (security headers, Link header)
+assets/         → headshot.jpg + headshot.webp, og-image.png (1200×630 link preview)
 ```
 
 ## Preview locally
@@ -27,16 +31,13 @@ python3 -m http.server 8000
 3. Build settings: **Framework preset = None**, **Build command = (blank)**, **Output directory = `/`**.
 4. Add custom domains under the Pages project.
 
-## Domain notes (the cleanup we parked)
+## Domains
 
-- Make **vishalkannankara.com** the canonical domain.
-- 301-redirect **kvishalv.com → vishalkannankara.com** (Cloudflare Redirect Rule).
-- Add a rule **`www.* → apex`** to fix the current 522 on the www hostnames.
+- **kvishalv.com** is the canonical domain (`<link rel="canonical">`, sitemap, robots.txt).
+- **vishalkannankara.com** 301-redirects to kvishalv.com.
+- **www.kvishalv.com** still serves the page itself. Add a Cloudflare Redirect Rule `www.kvishalv.com/* → https://kvishalv.com/${1}` (301) so there is one URL. `_redirects` cannot redirect between hostnames.
 
-## Before it's live — checklist
+## Open items
 
-- [ ] Add `assets/headshot.jpg` (professional headshot)
-- [ ] Add `assets/resume.pdf`
-- [ ] Add `assets/og-image.png` (1200×630)
-- [ ] Push `kvishalv/brain-stack` public so the Brain Stack "View code" link resolves
-- [ ] Confirm the Payment-Agent / Reliable Orders links point where you want (currently your GitHub profile)
+- [ ] Point the Brain Stack, Payment-Agent and Reliable Orders "View code" links at their repos (currently your GitHub profile)
+- [ ] Regenerate `assets/og-image.png` if the name, title or headshot changes
