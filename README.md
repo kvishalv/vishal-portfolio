@@ -39,5 +39,5 @@ python3 -m http.server 8000
 
 ## Open items
 
-- [ ] Point the Brain Stack, Payment-Agent and Reliable Orders "View code" links at their repos (currently your GitHub profile)
+- [ ] Keep the Professional Journey in step with the master resume (titles, dates, numbers)
 - [ ] Regenerate `assets/og-image.png` if the name, title or headshot changes
