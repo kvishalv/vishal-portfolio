@@ -302,3 +302,4 @@ strong { color: var(--ink); font-weight: 600; }
   .stat-row { gap: 22px; }
   .footer__inner { flex-direction: column; }
 }
+.cred .tags { margin-top: 12px; }
