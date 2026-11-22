@@ -7,4 +7,5 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=()
 
 /
-  Link: </sitemap.xml>; rel="sitemap"; type="application/xml"
+  Link: </sitemap.xml>; rel="sitemap"; type="application/xml", </index.md>; rel="describedby"; type="text/markdown"
+  Vary: Accept

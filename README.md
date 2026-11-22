@@ -11,6 +11,9 @@ favicon.svg     → monogram favicon
 robots.txt      → crawl rules, AI crawler rules and Content-Signal preferences
 sitemap.xml     → canonical URL list (update <lastmod> when content changes)
 _headers        → Cloudflare Pages response headers (security headers, Link header)
+index.md        → Markdown copy of the home page for AI agents; keep it in step with index.html
+functions/      → _middleware.js serves index.md for "/" when the request accepts text/markdown
+_routes.json    → runs the function only for "/" (and hides /functions/*)
 assets/         → headshot.jpg + headshot.webp, og-image.png (1200×630 link preview)
 ```
 
